@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-purple-200 via-pink-100 to-yellow-100 min-h-screen flex flex-col items-center justify-center font-sans">
+
+    <div class="text-center mb-8">
+        <h2 class="text-5xl font-bold text-purple-700 drop-shadow-md mb-4">Predicted Alphabet</h2>
+        <p class="text-6xl font-extrabold text-green-600 mt-4">{{ label }}</p>
+    </div>
+    
+
+    <div class="rounded-xl overflow-hidden border-4 border-purple-500 shadow-lg">
+        <img src="/{{ image }}" alt="Uploaded ASL Image" width="300" class="rounded-xl">
+    </div>
+
+    <a href="/" 
+       class="mt-8 text-blue-600 hover:text-blue-800 text-lg font-semibold transition duration-200">
+       ⬅ Back to Home
+    </a>
+
+    <footer class="text-sm text-gray-600 mt-12">
+        Mini Project
+    </footer>
+
+</body>
+</html>
+
+

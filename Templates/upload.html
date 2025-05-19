@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Upload Prediction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-purple-200 via-pink-100 to-yellow-100 min-h-screen flex flex-col items-center justify-center font-sans">
+
+    <div class="text-center mb-8">
+        <h1 class="text-5xl font-bold text-purple-700 drop-shadow-md mb-4">Image Upload Prediction</h1>
+        <p class="text-lg text-gray-700">Upload an image of an ASL alphabet to predict it</p>
+    </div>
+
+    <form action="/predict_image" method="POST" enctype="multipart/form-data" class="flex flex-col items-center space-y-6">
+        <input type="file" name="file" required 
+               class="block w-full text-lg text-gray-800 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none p-3 shadow-md"/>
+
+        <input type="submit" value="Predict"
+               class="px-8 py-3 bg-green-500 hover:bg-green-600 text-white text-lg rounded-xl shadow-md transition duration-300 cursor-pointer"/>
+    </form>
+
+    <a href="/" 
+       class="mt-8 text-blue-600 hover:text-blue-800 text-lg font-semibold transition duration-200">
+       ⬅ Back to Home
+    </a>
+
+    <footer class="text-sm text-gray-600 mt-12">
+         Mini Project
+    </footer>
+
+</body>
+</html>

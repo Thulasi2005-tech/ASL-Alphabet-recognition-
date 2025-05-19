@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ASL Real-Time Recognition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-purple-200 via-pink-100 to-yellow-100 min-h-screen flex flex-col items-center justify-center font-sans">
+
+    <div class="text-center mb-6">
+        <h1 class="text-5xl font-bold text-purple-700 drop-shadow-md">ASL Live Recognition</h1>
+        <p class="text-lg text-gray-700 mt-2">Real-time Sign Language Detection with Deep Learning</p>
+    </div>
+
+    <div class="mb-6 flex space-x-6">
+        <button onclick="startStream()" class="px-6 py-3 bg-green-500 hover:bg-green-600 text-white rounded-xl text-lg shadow-md transition duration-300">Start Webcam</button>
+        <button onclick="stopStream()" class="px-6 py-3 bg-red-500 hover:bg-red-600 text-white rounded-xl text-lg shadow-md transition duration-300">Stop Webcam</button>
+    </div>
+
+    <div class="rounded-xl overflow-hidden border-4 border-purple-500 shadow-lg">
+        <img id="videoFeed" src="" width="720" height="540" class="rounded-xl">
+    </div>
+
+    <footer class="text-sm text-gray-600 mt-8">
+        Made with ❤️ for your Mini Project
+    </footer>
+    <script>
+        function startStream() {
+            fetch('/start', { method: 'POST' })
+                .then(() => {
+                    // Wait until the server confirms the webcam is started
+                    document.getElementById('videoFeed').src = "/video_feed";
+                })
+                .catch(err => console.error("Failed to start webcam:", err));
+        }
+    
+        function stopStream() {
+            fetch('/stop', { method: 'POST' })
+                .then(() => {
+                    document.getElementById('videoFeed').src = "";
+                })
+                .catch(err => console.error("Failed to stop webcam:", err));
+        }
+    </script>
+    
+</body>
+</html>

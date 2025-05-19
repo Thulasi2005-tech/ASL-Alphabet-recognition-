@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ASL Recognizer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-purple-200 via-pink-100 to-yellow-100 min-h-screen flex flex-col items-center justify-center font-sans">
+
+    <div class="text-center mb-10">
+        <h1 class="text-6xl font-bold text-purple-700 drop-shadow-md mb-4">ASL Alphabet Recognizer</h1>
+        <p class="text-lg text-gray-700">Choose a mode to start predicting ASL signs</p>
+    </div>
+
+    <div class="flex space-x-8">
+        <button onclick="window.location.href='/webcam'" class="px-8 py-4 bg-green-500 hover:bg-green-600 text-white text-2xl rounded-xl shadow-md transition duration-300">Live Webcam Prediction</button>
+        <button onclick="window.location.href='/upload'" class="px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white text-2xl rounded-xl shadow-md transition duration-300">Image Upload Prediction</button>
+    </div>
+
+    <footer class="text-sm text-gray-600 mt-12">
+         Mini Project
+    </footer>
+
+</body>
+</html>
